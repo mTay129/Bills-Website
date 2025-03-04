@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - We Can Find You World</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">HOME</a>
+        <a href="privacy.html">PRIVACY POLICY</a>
+        <a href="terms.html">TERMS AND CONDITIONS</a>
+        <a href="signup.html">SIGN UP</a>
+        <a href="login.html" class="active">LOGIN</a>
+    </div>
+
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        $("#loginForm").submit(function(event) {
+            event.preventDefault(); // Prevent form reload
+
+            let formData = {
+                username: $("#username").val(),
+                password: $("#password").val(),
+            };
+
+            $.ajax({
+                url: "http://localhost:3000/login",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(formData),
+                success: function(response) {
+                    console.log("Server Response:", response);
+                    if (response.success) {
+                        window.location.href = "search.html";
+                    } else {
+                        alert("Invalid username or password.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error("Status:", status);
+                    console.error("Error:", error);
+                    console.error("Response Text:", xhr.responseText);
+                    alert("An error occurred: " + xhr.responseText);
+                }
+            });
+        });
+    </script>
+
+    <div class="footer">
+        <!-- Footer content here... -->
+    </div>
+</body>
+</html>

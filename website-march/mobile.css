@@ -1,0 +1,280 @@
+/* mobile.css */
+
+/* General adjustments for body */
+body {
+    margin: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #121212;
+    color: #e3d0ca;
+}
+
+/* Link colors */
+a {
+    color: #f2b8b1; 
+    text-decoration: underline; 
+    font-weight: bold; 
+}
+
+/* Change color once clicked (visited) */
+a:visited {
+    color: #a3a3a3; 
+    text-decoration: underline; 
+}
+
+/* Navbar adjustments for mobile */
+.navbar {
+    flex-direction: column; /* Stack links vertically */
+    padding: 15px 0;
+}
+
+.navbar a {
+    font-size: 14px;
+    padding: 8px 5px;
+}
+
+/* Center the image inside the container */
+.container {
+    text-align: center;
+}
+
+/* Style and resize the GIF */
+.logo {
+    width: 100%; 
+    max-width: 400px; /* Optional: Limit the size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer */
+.footer {
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Circle image wrapper */
+.circle-image {
+    display: flex; /* Use Flexbox for centering */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image (if necessary) */
+    margin: 20px auto; /* Add spacing around the circle-image div */
+    width: 100%; /* Ensure full-width container for centering */
+    text-align: center; /* Center the content inside the wrapper */
+}
+
+.circle-image img {
+    width: 150px; /* Set a default width */
+    height: 150px; /* Set a default height */
+    max-width: 100%; /* Prevent overflow */
+    max-height: 100%; /* Prevent overflow */
+    border-radius: 50%; /* Ensure the image remains circular */
+    object-fit: cover; /* Prevent image distortion */
+}
+
+/* Center image responsiveness */
+.center-image img {
+    width: 90%;
+    max-width: 300px;
+}
+
+/* Adjust video container */
+.video-container video,
+.side-by-side-videos video {
+    width: 100%;
+    height: auto;
+}
+
+.video-container .caption {
+    margin-top: 10px;
+    font-size: 24px;
+    color: white;
+}
+
+.side-by-side-videos {
+    flex-direction: column; /* Stack videos vertically */
+    margin: 10px;
+}
+
+.side-by-side-videos .video {
+    margin: 10px 0;
+}
+
+/* Side-by-side images adjustment */
+.side-by-side-images {
+    flex-direction: column; /* Stack images vertically */
+    margin: 10px;
+}
+
+.side-by-side-images .image {
+    margin: 10px 0;
+}
+
+.side-by-side-images img {
+    width: 90%;
+    max-width: 300px;
+}
+
+/* Cause container adjustments */
+.cause-container {
+    flex-direction: column; /* Stack content vertically */
+}
+
+.left-side,
+.right-side {
+    width: 100%; /* Full width for mobile */
+}
+
+.right-side {
+    padding: 10px;
+}
+
+.right-side h1 {
+    font-size: 18px;
+}
+
+.right-side p {
+    font-size: 14px;
+}
+
+/* Cause container - Mobile view */
+.cause-container {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center everything */
+    padding: 10px;
+    background-color: white; 
+    color: black;
+    margin: 10px auto;
+    max-width: 100%; /* Full width for mobile */
+    border-radius: 8px;
+}
+
+/* Left-side (image) */
+.cause-container .left-side img {
+    width: 90%; /* Reduce image size for smaller screens */
+    max-width: 300px; /* Restrict maximum size */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px; /* Add spacing below the image */
+}
+
+/* Right-side (text) */
+.cause-container .right-side {
+    text-align: center; /* Center text */
+    padding: 10px;
+}
+
+.cause-container .right-side h1 {
+    font-size: 20px; /* Smaller heading for mobile */
+    margin-bottom: 10px;
+    color : black;
+}
+
+.cause-container .right-side p {
+    font-size: 14px;
+    line-height: 1.4;
+    color : black;
+}
+
+
+/* Banner */
+.banner {
+    background-image: url('/Pics-Vids/ambassador-banner.png'); /* Same image */
+    background-size: cover;
+    background-position: center;
+    height: 200px; /* Reduced height for mobile */
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 10px; /* Less padding for mobile */
+}
+
+.banner h1 {
+    font-size: 20px; /* Smaller headline for mobile */
+    margin: 0;
+    line-height: 1.2; /* Ensure good readability on smaller screens */
+}
+
+/* Contact form adjustments */
+.contact-form,
+.contact-info {
+    width: 100%; /* Full width */
+    margin: 10px 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.contact-form button {
+    font-size: 14px;
+    padding: 12px;
+}
+
+/* Adjust contact info text */
+.contact-info h2 {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Reduce spacing for center image */
+.center-image {
+    margin: 20px 0;
+}
+
+/* Make text more readable for smaller screens */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 18px;
+    color: white;
+}
+
+p {
+    font-size: 14px;
+    color: #e3d0ca;
+}
+
+/* Add responsiveness to contact form elements */
+.contact-form input, 
+.contact-form textarea {
+    font-size: 14px;
+}
+
+.contact-form button {
+    font-size: 14px;
+}
+
+.footer .social-links {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center the links horizontally */
+    align-items: center; /* Center the links vertically */
+    gap: 20px; /* Add spacing between the images */
+    margin: 0 auto; /* Center the entire container */
+}
+
+/* Style the images inside the links */
+.footer .social-links img {
+    width: 40px; /* Set an appropriate size for the images */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent overflow */
+    border: none; /* Remove any border */
+}
+
+/* Remove link underline */
+.footer .social-links a {
+    text-decoration: none; /* Remove underline from links */
+    display: inline-block; /* Ensure links behave like inline blocks */
+}
+
+@media (max-width: 480px) {
+    .circle-image {
+        width: 70%; /* Shrink further on smaller screens */
+        max-width: 200px; /* Limit the size for smaller devices */
+    }
+    .footer .social-links img {
+        width: 30px; /* Smaller size for mobile */
+    }
+}
