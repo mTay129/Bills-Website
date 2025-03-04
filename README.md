@@ -12,3 +12,5 @@ Pics-Vids has all the pictures and videos that are on the website so we don't ha
 I figured it would be easier to host everything on our server and worst case we'll show a link to the video if the user can't play the video on their browser.
 
 Anyway now you how to modify the code if you pull stuff down and why I'm not directly linking to images and videos. 
+
+To run server.js you need to open command prompt and run node server.js from the correct directory.
