@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Viewport meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self'; 
+        script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://code.jquery.com https://www.google-analytics.com;; 
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' https://facebook.com https://instagram.com https://x.com https://www.google-analytics.com;;
+        connect-src 'self' https://wecanfindyouworld.com https://www.google-analytics.com;;
+        form-action 'self';
+        object-src 'none';
+        upgrade-insecure-requests;
+        block-all-mixed-content;">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNYP8DDH9G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-GNYP8DDH9G');
+    </script>
+
+    <!-- Used to call the base style sheet and styles.css to scale based on screen size -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="styles.css">
+
+   <!-- Calling style sheet for font -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+   <!-- jQuery library -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+
+    <title>Registration - We Can Find You World</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">HOME</a>
+        <a href="privacy.html">PRIVACY POLICY</a>
+        <a href="terms.html">TERMS AND CONDITIONS</a>
+        <a href="signup.html" class="active">SIGN UP</a>
+    </div>
+
+    <h1>Register</h1>
+    <form id="registrationForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+        
+        <label for="birthDate">Date of Birth:</label>
+        <input type="date" id="birthDate" name="birthDate" required><br><br>
+
+        <label for="country">Country of Birth:</label>
+        <select id="country" name="country" required>
+            <!-- Options for countries... -->
+        </select><br><br>
+
+        <label for="state">State/Province/Region of Birth:</label>
+        <select id="state" name="state" required></select><br><br>
+
+        <label for="city">City of Birth:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        const countryStates = {
+            // Add the countryStates object here...
+        };
+
+        // Populate states based on selected country
+        $("#country").change(function() {
+            let selectedCountry = $(this).val();
+            let states = countryStates[selectedCountry] || [];
+            let stateOptions = states.map(state => `<option value="${state}">${state}</option>`).join('');
+            $("#state").html(stateOptions);
+        });
+
+        // Initialize default states for the first country
+        $("#country").trigger("change");
+
+        // Submit form using AJAX
+        $("#registrationForm").submit(function(event) {
+            event.preventDefault(); // Prevent form reload
+
+            let formData = {
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                email: $("#email").val(),
+                phoneNumber: $("#phoneNumber").val(),
+                birthDate: $("#birthDate").val(),
+                country: $("#country").val(),
+                state: $("#state").val(),
+                city: $("#city").val(),
+                username: $("#username").val(),
+                password: $("#password").val(),
+            };
+
+            // Check if the user is over 18 years old
+            let birthDate = new Date(formData.birthDate);
+            let today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            let monthDifference = today.getMonth() - birthDate.getMonth();
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                alert("You must be at least 18 years old to register.");
+                return;
+            }
+
+            $.ajax({
+                url: "http://localhost:3000/register",
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(formData),
+                success: function(response) {
+                    console.log("Server Response:", response);
+                    alert("Registration successful! Please complete your profile.");
+                    window.location.href = "additional_info.html";
+                },
+                error: function (xhr, status, error) {
+                    console.error("Status:", status);
+                    console.error("Error:", error);
+                    console.error("Response Text:", xhr.responseText);
+                    alert("An error occurred: " + xhr.responseText);
+                }
+            });
+        });
+    </script>
+
+    <div class="footer">
+        <!-- Footer content here... -->
+    </div>
+</body>
+</html>
