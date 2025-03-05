@@ -1,3 +1,5 @@
+//server.js
+
 const https = require('https');
 const fs = require('fs');
 const express = require('express');
@@ -6,7 +8,7 @@ const cors = require('cors');
 
 // Create Express app
 const app = express();
-const port = 3000; // Change port to avoid conflict with SQL Server's port
+const port = 3000; // To avoid conflict with SQL Server's port
 
 const helmet = require('helmet');
 
@@ -36,14 +38,14 @@ app.use(express.json());
 
 // Debug to test GET response
 app.get('/', (req, res) => {
-    res.send('Server is running!'); // Basic response for GET /
+    res.send('Server is running!'); // Basic response for GET
 });
 
 // Database configuration
 const dbConfig = {
     server: '100-33-109-208\\SQLEXPRESS', // Server 
-    user: 'test', // Replace with your username
-    password: 'T#$7P@$$toor', // Replace with your password
+    user: 'test',
+    password: 'T#$7P@$$toor',
     database: 'test_cust',
     options: {
         encrypt: true, // Use encryption if needed
