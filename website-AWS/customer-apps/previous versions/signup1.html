@@ -1,0 +1,53 @@
+<!-- /templates/signup1.html -->
+<!-- This file contains the HTML form for Step 1 of the customer signup process -->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <title>Step 1 - Public Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
+</head>
+<body>
+
+    {% include 'navbar.html' %}
+
+    <main class="customer-form-container">
+        <div class="customer-form">
+                <form action="{{ url_for('signup_step1') }}" method="post">
+                    <label for="year">Year:</label>
+                    <input type="text" id="year" name="year">
+
+                    <label for="month">Month:</label>
+                    <input type="text" id="month" name="month">
+
+                    <label for="date">Day of Birth (optional):</label>
+                    <input type="text" id="date" name="date" min="1" max="31">
+                    <small>If you don't know the exact day, leave this blank.</small>
+
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state">
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city">
+
+                    <label for="hospital">Hospital:</label>
+                    <input type="text" id="hospital" name="hospital">
+
+                    <label for="doctor">Doctor or Midwife:</label>
+                    <input type="text" id="doctor" name="doctor">
+
+                    <label for="notes">Notes:</label>
+                    <textarea id="notes" name="notes"></textarea>
+
+                    <div class="optional-note">Optional additional information.</div>
+
+                    <button type="submit">Next</button>
+                </form>
+        </div>
+    </main>
+
+</body>
+</html>
