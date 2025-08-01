@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Welcome to We Can Find You World{% endblock %}
+{% block content %}
+
+<div class="container">
+    <img src="{{ url_for('static', filename='Pics-Vids/lighthouse-logo.gif') }}" alt="Lighthouse Logo" class="logo">
+</div>
+
+<center>
+    <h1>Welcome to We Can Find You World</h1>
+    <p>Your journey to reconnect begins here.</p>
+    <p>We help individuals around the world reunite with loved ones — all from one meeting place.</p>
+</center>
+
+<div class="video-container">
+    <video controls>
+        <source src="{{ url_for('static', filename='Pics-Vids/THE ONE MEETING PLACE.mp4') }}" type="video/mp4">
+        Your browser does not support this video tag. 
+        <a href="https://youtu.be/C4O3BI6ijho?si=LuWJNq7eo5ZYZpdx">Watch on YouTube</a>
+    </video>
+</div>
+
+<center>
+    <h2>Explore More</h2>
+</center>
+
+<div class="home-buttons">
+    <a href="{{ url_for('why') }}" class="button">Why Use Us</a>
+    <a href="{{ url_for('approach') }}" class="button">Our Approach</a>
+    <a href="{{ url_for('testimonials') }}" class="button">Testimonials</a>
+    <a href="{{ url_for('cause') }}" class="button">Help Our Cause</a>
+    <a href="{{ url_for('contact') }}" class="button">Contact Us</a>
+</div>
+
+{% endblock %}
