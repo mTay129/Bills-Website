@@ -1,0 +1,14 @@
+<!-- /templates/modals/signup_error.html -->
+<!-- This file displays an error message if there is an issue during the signup process -->
+
+<div class="modal-overlay hidden" id="error-overlay"></div>
+
+<div id="error-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Uh-oh!</h2>
+    <p>Sorry, there was an error adding your information to our system. Please try again.</p>
+    <p>If you continue to get an error, please contact support and give them the error message below:</p>
+    <pre id="error-msg">{{ error_message if error_message else "" }}</pre>
+    <button type="button" id="close-error-btn" class="btn">Go Back</button>
+  </div>
+</div>

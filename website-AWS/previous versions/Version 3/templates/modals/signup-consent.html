@@ -1,0 +1,21 @@
+<!-- /templates/modals/signup-consent.html -->
+<!-- This file contains the consent modal for the signup process -->
+
+<div class="modal-overlay hidden" id="modal-overlay"></div>
+
+<div id="consent-modal" class="modal hidden" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="modal-content">
+    <h2>Before You Continue</h2>
+    <p>
+      Please confirm that you've read and agree to our
+      <a href="{{ url_for('privacy') }}">Privacy Policy</a> and
+      <a href="{{ url_for('terms') }}">Terms and Conditions</a>.
+    </p>
+    <label>
+      <input type="checkbox" id="consent-checkbox">
+      I agree to the Privacy Policy and Terms and Conditions.
+    </label>
+    <br><br>
+    <button type="button" id="consent-confirm" class="btn">Confirm</button>
+  </div>
+</div>

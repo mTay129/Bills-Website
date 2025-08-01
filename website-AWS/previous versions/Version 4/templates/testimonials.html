@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Client Testimonials{% endblock %}
+{% block content %}
+<center><h2>Client Testimonials</h2></center>
+<center><p>We are reuniting people all over the world. View some of our Testimonials below from past clients.</p></center>
+
+<div class="side-by-side-videos">
+    <div class="video">
+        <video controls>
+            <source src="{{ url_for('static', filename='Pics-Vids/found-her-father.mp4') }}" type="video/mp4">
+            Your browser does not support this video tag.
+        </video>
+        <div class="caption">Found her Father!</div>
+    </div>
+    <div class="video">
+        <video controls>
+            <source src="{{ url_for('static', filename='Pics-Vids/found-his-daughter.mp4') }}" type="video/mp4">
+            Your browser does not support this video tag.
+        </video>
+        <div class="caption">Found his Daughter!</div>
+    </div>
+</div>
+
+<br><br>
+
+<div class="side-by-side-images">
+    <div class="image">
+        <img src="{{ url_for('static', filename='Pics-Vids/2000-jan-30.png') }}" alt="Do you know her mom?">
+        <div class="caption">Do you know her mom?</div>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='Pics-Vids/1952-mar-11.png') }}" alt="Adopted and Looking - Do you know her?">
+        <div class="caption">Adopted and Looking - Do you know her?</div>
+    </div>
+</div>
+{% endblock %}

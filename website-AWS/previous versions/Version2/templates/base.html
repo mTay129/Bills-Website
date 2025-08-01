@@ -1,0 +1,28 @@
+<!-- templates/base.html -->
+<!-- Base Template for We Can Find You World -->
+  
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- JavaScript -->
+    <script defer src="{{ url_for('static', filename='theme-toggle.js') }}"></script>
+
+    <title>{% block title %}We Can Find You World{% endblock %}</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include 'footer.html' %}
+</body>
+</html>

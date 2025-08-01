@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Help Our Cause{% endblock %}
+{% block content %}
+<div class="cause-container">
+    <div class="left-side">
+        <img src="{{ url_for('static', filename='Pics-Vids/heart-hands.png') }}" alt="Hands with Heart" class="tablet-image"/>
+    </div>
+    <div class="right-side">
+        <center><h1>HELP OUR CAUSE</h1></center>
+        <center><p>With your monetary support and contributions, it will help us take on possible Pro Bono cases.</p></center>
+        <br>
+        <center><p>Contact us for more information.</p></center>
+    </div>
+</div>
+
+<div class="banner">
+    <h1>INTERESTED IN BECOMING AN AMBASSADOR?</h1>
+</div>    
+{% endblock %}

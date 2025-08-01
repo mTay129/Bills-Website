@@ -1,0 +1,12 @@
+<!-- /templates/modals/signup-success.html -->
+<!-- This file displays a success message after completing the signup process -->
+
+<div class="modal-overlay hidden" id="success-overlay"></div>
+
+<div id="success-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Signup Complete!</h2>
+    <p>You are customer number <strong id="success-id" data-public-id="{{ public_id }}">{{ public_id }}</strong>.</p>
+    <button id="success-ok-btn" class="btn" data-url="{{ url_for('home') }}">Go to Home</button>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<!-- templates/signup2.html -->
+<!-- This file contains the HTML form for Step 2 of the customer signup process -->
+
+{% extends 'base.html' %}
+
+{% block title %}Step 2 - Private Info{% endblock %}
+
+{% block content %}
+<main class="customer-form-container">
+    <form id="signup-form" method="POST" class="customer-form" aria-label="Private Information Form">
+        <h2>Contact & Billing Information</h2>
+        <input type="hidden" name="public_id" value="{{ public_id }}">
+
+        <div class="form-name-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required>
+
+            <label for="middle_name">Middle Name <span class="optional">(optional)</span>:</label>
+            <input type="text" id="middle_name" name="middle_name" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required>
+        </div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid email format" required>
+
+        <label for="phone">Phone Number: <span class="small">Format: 1234567890 or 123-456-7890</span></label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9\-]{10,13}" title="Ten-digit phone number, hyphens allowed" required>
+
+        <label for="address">Billing Address:</label>
+        <textarea id="address" name="address" rows="4" pattern="[A-Za-z0-9\s,.-]+" title="Only letters, numbers, spaces, and ,.- allowed" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Only add error span if message exists -->
+    {% if error_message %}
+        <span id="error-message-data" data-error="{{ error_message }}"></span>
+    {% endif %}
+
+    <!-- Modular modals -->
+    {% include 'modals/signup-consent.html' %}
+
+    {% if success %}
+        {% include 'modals/signup-success.html' %}
+    {% endif %}
+
+    {% if error_message %}
+        {% include 'modals/signup-error.html' %}
+    {% endif %}
+
+</main>
+
+<!-- Load modal scripts -->
+<script src="{{ url_for('static', filename='modals/consent-modal.js') }}"></script>
+
+{% if success %}
+  <script src="{{ url_for('static', filename='modals/success-modal.js') }}"></script>
+{% endif %}
+
+{% if error_message %}
+    <script src="{{ url_for('static', filename='modals/error-modal.js') }}"></script>
+{% endif %}
+
+{% endblock %}

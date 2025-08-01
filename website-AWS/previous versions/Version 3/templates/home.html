@@ -1,0 +1,148 @@
+<!-- /templates/home.html -->
+<!-- This is the home page -->
+{% extends 'base.html' %}
+
+{% block title %}Home - We Can Find You World{% endblock %}
+
+{% block content %}
+<div class="container">
+    <img src="{{ url_for('static', filename='Pics-Vids/lighthouse-logo.gif') }}" alt="Lighthouse Logo" class="logo">
+</div> 
+
+<center><h1>WHY USE US?</h1></center>
+
+<center><p>We can help you discover the Unknown. We are leading everybody in the world all to one meeting place to help find each other. Just think, everybody all in one meeting place to look for their lost loved ones. Are you looking for your mom, dad, siblings or kids? </p>
+
+<p>We understand it's hard to know where to look and who to turn to with such delicate matters. Let our team here at We Can Find You World @ The One Meeting Place Only 1 help you. We have your starting and finishing place right here and we can help get the answers you are looking for.</p>
+    
+<p>It's all done here in one meeting place. Just look for the lighthouse and contact us to get started today!</p></center>
+
+<center><h1>WE CAN FIND YOU WORLD @ THE ONE MEETING PLACE ONLY 1</h1></center>
+
+<div class="video-container">
+    <video controls>
+        <source src="{{ url_for('static', filename='Pics-Vids/THE ONE MEETING PLACE.mp4') }}" type="video/mp4" alt="https://youtu.be/C4O3BI6ijho?si=LuWJNq7eo5ZYZpdx">
+        Sorry but your browser does not support this video tag. You can view the video about <a href="https://youtu.be/C4O3BI6ijho?si=LuWJNq7eo5ZYZpdx" alt>The One Meeting Place</a> on YouTube.
+    </video>
+</div>
+
+<div class="video-container">
+    <div class="caption">Dad Tommy Cordell</div>
+    <video controls>
+        <source src="{{ url_for('static', filename='Pics-Vids/looking-for-my-dad.mp4') }}" type="video/mp4" alt="https://youtu.be/EqgbmmCvHXs?si=Ult_A_AAGOslWF1V">
+    Sorry but your browser does not support this video tag. You can view the video about <a href="https://youtu.be/EqgbmmCvHXs?si=Ult_A_AAGOslWF1V" alt>The One Meeting Place</a> on YouTube.
+    </video>
+</div>
+<center><h2>Our Approach</h2></center>
+<center><p>Our team consists of highly trained and experienced individuals who are dedicated to providing our clients with the highest level of service and professionalism.
+        With over 10 plus years of experience, we specialize in connecting families with each other no matter where they are located all from one place.</p>
+        <br>
+        <p>We believe in a personalized approach to each case, taking the time to understand our clients' unique needs and concerns before developing a tailored strategy.</p>
+</center>
+
+<div class="circle-image">
+    <img src="{{ url_for('static', filename='Pics-Vids/pen-image.png') }}" alt="Circular Image">
+</div>
+<center><h2>Client Testimonials</h2></center>
+<center><p>We are reuniting people all over the world. View some of our Testimonials below from past clients.</p></center>
+
+<div class="side-by-side-videos">
+    <div class="video">
+        <video controls>
+            <source src="{{ url_for('static', filename='Pics-Vids/found-her-father.mp4') }}" type="video/mp4" alt="https://vimeo.com/951614513/d812f587da">
+            Sorry but your browser does not support this video tag. You can view the video about <a href="https://vimeo.com/951614513/d812f587da">how she found her father</a> on Vimeo.
+        </video>
+        <div class="caption">Found her Father!</div>
+    </div>
+    <div class="video">
+        <video controls>
+            <source src="{{ url_for('static', filename='Pics-Vids/found-his-daughter.mp4') }}" type="video/mp4" alt="https://vimeo.com/952390326/1c799db580">
+            Sorry but your browser does not support this video tag. You can view the video about <a href="https://vimeo.com/952390326/1c799db580">how he found his daughter</a> on Vimeo.
+        </video>
+        <div class="caption">Found his Daughter!</div>
+    </div>
+</div>
+
+<br><br>
+
+<div class="side-by-side-images">
+    <div class="image">
+        <img src="{{ url_for('static', filename='Pics-Vids/2000-jan-30.png') }}" alt="Do you know her mom?">
+        <div class="caption">Do you know her mom?</div>
+    </div>
+    <div class="image">
+        <img src="{{ url_for('static', filename='Pics-Vids/1952-mar-11.png') }}" alt="Adopted and Looking - Do you know her?">
+        <div class="caption">Adopted and Looking - Do you know her?</div>
+    </div>
+</div>
+
+<br><br>
+
+<div class="cause-container">
+    <div class="left-side">
+        <img src="{{ url_for('static', filename='Pics-Vids/heart-hands.png') }}" alt="Hands with Heart" class="tablet-image"/>
+    </div>
+    <div class="right-side">
+        <center><h1>HELP OUR CAUSE</h1></center>
+        <center><p>With your monetary support and contributions, it will help us take on possible Pro Bono cases.</p></center>
+        <br>
+        <center><p>Contact us for more information.</p></center>
+    </div>
+</div>
+
+<div class="banner">
+    <h1>INTERESTED IN BECOMING AN AMBASSADOR?</h1>
+</div>    
+
+<br><br>
+
+<h1><center>CONTACT US</center></h1>
+<div class="contact-us">
+    <div class="contact-form">
+        <h2>Drop us a line!</h2>
+        <form action="https://formspree.io/f/mannpngy" method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+        
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+        
+            <label for="attachments">Attach Files:</label>
+            <input type="file" id="attachments" name="attachments" multiple><br><br>
+            <p id="file-count">Attachments: 0</p><br>
+        
+            <button type="submit">SEND</button>
+        </form>
+        <script>
+            // JavaScript to count attachments
+            document.getElementById('attachments').addEventListener('change', function(event) {
+                var fileCount = event.target.files.length;
+                document.getElementById('file-count').textContent = 'Attachments: ' + fileCount;
+            });
+        </script>
+    </div>
+
+    <div class="contact-info">
+        <h1>We'd love to hear from you, so feel free to visit during normal business hours.</h1>
+        <br><br>
+        <h1><b>WE CAN FIND YOU WORLD @ THE ONE MEETING PLACE ONLY</b></h1>
+        <br>
+        <h1>Office Phone: <b>954-828-0252</b></h1>
+        <h1>Cell Phone: <b>954-512-8511</b></h1>
+        <h1>(Texting Capabilities)</h1>
+    </div>
+</div>
+
+<br><br>
+<div class="center-image">
+    <img src="{{ url_for('static', filename='Pics-Vids/keep-us-a-secret.png') }}" alt="Keep Us A Secret">
+</div>
+<br>
+{% endblock %}
+

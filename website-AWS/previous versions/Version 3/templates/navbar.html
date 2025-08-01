@@ -1,0 +1,13 @@
+<!-- templates/navbar.html -->
+<!-- Navbar Template -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="{{ url_for('home') }}" class="{% if active_page == 'home' %}active{% endif %}">HOME</a>
+<!--<a href="{{ url_for('privacy') }}" class="{% if active_page == 'privacy' %}active{% endif %}">PRIVACY POLICY</a>
+    <a href="{{ url_for('terms') }}" class="{% if active_page == 'terms' %}active{% endif %}">TERMS AND CONDITIONS</a>-->
+    <a href="{{ url_for('signup_step1') }}" class="{% if active_page == 'signup' %}active{% endif %}">SIGN UP</a>
+  </div>
+  <div class="nav-right">
+    <button id="theme-toggle" class="theme-toggle-button">Light Mode</button>
+  </div>
+</nav>

@@ -1,0 +1,46 @@
+<!-- /templates/signup1.html -->
+<!-- This file contains the HTML form for Step 1 of the customer signup process -->
+{% extends 'base.html' %}
+
+{% block title %}Step 1 - Public Info{% endblock %}
+
+{% block content %}
+<main class="customer-form-container">
+    <form action="{{ url_for('signup_step1') }}" method="post" class="customer-form"
+          onsubmit="return confirm('Are you sure all your birth and location information is accurate before submitting?')">
+
+        <h2>Birth & Location Information</h2>
+
+        <label for="year">Year:</label>
+        <input type="number" id="year" name="year" min="1900" max="2100" required>
+
+        <label for="month">Month:</label>
+        <input type="number" id="month" name="month" min="1" max="12" required>
+
+        <label for="date">Day of Birth: <span class="optional">(optional)</span>
+            <span class="small">If you don't know the exact day, leave this blank.</span>
+        </label>
+        <input type="number" id="date" name="date" min="1" max="31">
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
+
+        <label for="hospital">Hospital:</label>
+        <input type="text" id="hospital" name="hospital" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
+
+        <label for="doctor">Doctor or Midwife:</label>
+        <input type="text" id="doctor" name="doctor" pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
+
+        <label for="notes">Notes (max 10 characters):<br>
+            <span class="optional-note">Optional additional information.</span><br>
+            <span class="small">Please keep it under 10 characters.</span>
+        </label>
+        <input type="text" id="notes" name="notes" maxlength="10">
+
+        <button type="submit">Next</button>
+    </form>
+</main>
+{% endblock %}
